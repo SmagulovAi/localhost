@@ -1,8 +1,17 @@
 <?php
     if (isset($_GET['number1']) && isset($_GET['number2']) && isset($_GET['operator'])) {
-        switch ($result) {
+        switch ($_GET['operator']) {
             case '-':
-                echo $_GET['number1'] - $_GET['number2'];
+                $result = $_GET['number1'] - $_GET['number2'];
+                break;
+            case '+':
+                $result = $_GET['number1'] + $_GET['number2'];
+                break;
+            case '*':
+                $result = $_GET['number1'] + $_GET['number2'];
+                break;
+            case '/':
+                $result = $_GET['number1'] + $_GET['number2'];
                 break;
         }
     }
@@ -28,8 +37,8 @@
                     <div class="mb-3">
                         <label for="operator" class="form-label">Operator</label>
                         <!-- <input type="text" class="form-control" id="operator" name="operator"> -->
-                        <select class="form-select" aria-label="Default select example" id="operator" name="operator">
-                            <option selected>+</option>
+                        <select class="form-select" id="operator" name="operator">
+                            <option>+</option>
                             <option>-</option>
                             <option value="2">*</option>
                             <option value="3">/</option>
