@@ -1,19 +1,11 @@
 <?php
-    if (isset($_GET['number1']) && isset($_GET['number2']) && isset($_GET['operator'])) {
-        switch ($_GET['operator']) {
-            case '-':
-                $result = $_GET['number1'] - $_GET['number2'];
-                break;
-            case '+':
-                $result = $_GET['number1'] + $_GET['number2'];
-                break;
-            case '*':
-                $result = $_GET['number1'] + $_GET['number2'];
-                break;
-            case '/':
-                $result = $_GET['number1'] + $_GET['number2'];
-                break;
-        }
+    if (isset($_GET['number1']) &&
+        isset($_GET['number2']) &&
+        isset($_GET['number3'])) {
+        // $result = abs($_GET['number1']);
+        // $result = abs($_GET['number1']);
+        $numbers = [$_GET['number1'], $_GET['number2'], $_GET['number3']]
+        $result = max($numbers);
     }
 ?>
 <!DOCTYPE html>
@@ -27,7 +19,6 @@
 </head>
 <body>
     <div class="container mt-3">
-        <?php include('header.php'); ?>
         <div class="row">
             <div class="col">
                 <form action="">
@@ -36,18 +27,12 @@
                         <input type="number" class="form-control" id="number1" name="number1" value="<?= $_GET['number1'] ?? '' ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="operator" class="form-label">Operator</label>
-                        <!-- <input type="text" class="form-control" id="operator" name="operator"> -->
-                        <select class="form-select" id="operator" name="operator">
-                            <option>+</option>
-                            <option>-</option>
-                            <option value="2">*</option>
-                            <option value="3">/</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
                         <label for="number2" class="form-label">Number 2</label>
                         <input type="number" class="form-control" id="number2" name="number2" value="<?= $_GET['number2'] ?? '' ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="number3" class="form-label">Number 3</label>
+                        <input type="number" class="form-control" id="number3" name="number3" value="<?= $_GET['number3'] ?? '' ?>">
                     </div>
                     <div class="mb3">
                         <button class="btn btn-primary" type="submit">Result</button>
